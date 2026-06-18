@@ -19,12 +19,56 @@ FIELD_NAMES = [
     'is_active'
 ]
 
+DUMMY_EMPLOYEES = [
+    {
+        'id': 1,
+        'first_name': 'Andi',
+        'last_name': 'Saputra',
+        'email': 'andi.saputra@example.com',
+        'phone': '081234567890',
+        'department': 'HR',
+        'position': 'Staff HR',
+        'salary': 4500000.0,
+        'hire_date': '2024-10-01',
+        'is_active': True
+    },
+    {
+        'id': 2,
+        'first_name': 'Rina',
+        'last_name': 'Wicaksana',
+        'email': 'rina.wicaksana@example.com',
+        'phone': '081298765432',
+        'department': 'Finance',
+        'position': 'Staff Finance',
+        'salary': 5200000.0,
+        'hire_date': '2024-11-05',
+        'is_active': True
+    },
+    {
+        'id': 3,
+        'first_name': 'Budi',
+        'last_name': 'Pratama',
+        'email': 'budi.pratama@example.com',
+        'phone': '081212345678',
+        'department': 'IT',
+        'position': 'Support IT',
+        'salary': 4800000.0,
+        'hire_date': '2025-01-10',
+        'is_active': True
+    }
+]
+
 
 def create_data_file_if_missing(filename):
     if not os.path.exists(filename):
         with open(filename, mode='w', newline='', encoding='utf-8') as csvfile:
             writer = csv.DictWriter(csvfile, fieldnames=FIELD_NAMES)
             writer.writeheader()
+            for emp in DUMMY_EMPLOYEES:
+                row = emp.copy()
+                row['salary'] = f"{emp['salary']:.2f}"
+                row['is_active'] = 'True' if emp['is_active'] else 'False'
+                writer.writerow(row)
 
 
 def load_employees(filename):
@@ -337,3 +381,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+    
