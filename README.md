@@ -71,7 +71,7 @@ AKRAB dirancang dengan tujuan untuk:
 - Operasi ini bersifat permanen dan memerlukan konfirmasi
 
 #### **Fitur 6: Mencari Karyawan**
-- Mencari karyawan berdasarkan kriteria: nama, departemen, atau posisi
+- Mencari karyawan berdasarkan keyword yang bisa muncul pada nama depan, nama belakang, departemen, atau posisi
 - Menampilkan hasil pencarian yang sesuai dengan keyword yang dimasukkan
 - Memudahkan user menemukan data karyawan spesifik dengan cepat
 
@@ -98,11 +98,11 @@ AKRAB dirancang dengan tujuan untuk:
     └────┬───────────┬───┘
          │ Ya        │ Tidak
          ▼           ▼
-    ┌────────┐  ┌──────────────────┐
-    │ Tampil │  │ Buat file kosong  │
-    │ Data   │  │ dan tampilkan     │
-    │        │  │ "Belum ada data"  │
-    └────┬───┘  └──────┬───────────┘
+    ┌────────┐  ┌─────────────────────────────┐
+    │ Tampil │  │ Buat file CSV dengan header  │
+    │ Data   │  │ dan data dummy awal         │
+    │        │  │ lalu tampilkan kosong       │
+    └────┬───┘  └──────┬────────────────────┘
          │              │
          └──────┬───────┘
                 ▼
@@ -322,22 +322,14 @@ AKRAB dirancang dengan tujuan untuk:
              │
              ▼
     ┌──────────────────────┐
-    │ Pilih Kriteria:      │
-    │ 1. Nama              │
-    │ 2. Departemen        │
-    │ 3. Posisi            │
-    └────────┬─────────────┘
-             │
-             ▼
-    ┌──────────────────────┐
-    │ Input Keyword        │
-    │ Pencarian            │
+    │ Input keyword        │
+    │ pencarian            │
     └────────┬─────────────┘
              │
              ▼
     ┌────────────────────┐
     │ Cari di CSV        │
-    │ sesuai kriteria    │
+    │ nama/dept/posisi   │
     └────┬───────────┬───┘
          │ Ditemukan │ Tidak Ditemukan
          ▼           ▼
